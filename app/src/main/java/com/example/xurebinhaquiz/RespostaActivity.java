@@ -19,7 +19,7 @@ public class RespostaActivity extends AppCompatActivity {
             @Override
             public void run() {
                 try {
-                    Thread.sleep(1300);
+                    Thread.sleep(800);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }

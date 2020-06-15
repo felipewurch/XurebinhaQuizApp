@@ -5,14 +5,8 @@ import java.util.List;
 
 public class Questions {
 
-    private String pergunta;
-
     List<String> questionsList = new ArrayList<>();
 
-
-
-
-    
         public Questions(){
 
             questionsList.add("Sou bastante autêntico e digo aquilo que penso. ");
@@ -80,14 +74,10 @@ public class Questions {
             questionsList.add("Sou muito organizado e detalhista nas coisas. Eﬁcácia é muito importante para mim.");
             questionsList.add("Eu vou até o ﬁm em meus objetivos. Não desisto até atingi-los.");
             questionsList.add("Gosto de satisfazer os outros em relação àquilo que me pedem.");
-
-
         }
-
-        public List<String> getQuestionsList(){
+            public List<String> getQuestionsList(){
             return questionsList;
             }
-
     }
 
 
