@@ -52,7 +52,7 @@ public class QuizActivity extends AppCompatActivity {
 
     public void btnResponderOnClick(View v) {
 
-        while (ordemPergunta<10){
+       if(ordemPergunta<10){
             if (rbResposta1.isChecked()) {
                 pontosR += 1;
             } else if (rbResposta2.isChecked()) {
@@ -62,7 +62,7 @@ public class QuizActivity extends AppCompatActivity {
             } else if (rbResposta4.isChecked()) {
                 pontosR += 4;
             }}
-        while (ordemPergunta<20){
+        else if (ordemPergunta<20){
             if (rbResposta1.isChecked()) {
                 pontosI += 1;
             } else if (rbResposta2.isChecked()) {
@@ -72,7 +72,7 @@ public class QuizActivity extends AppCompatActivity {
             } else if (rbResposta4.isChecked()) {
                 pontosI += 4;
             }}
-        while (ordemPergunta<30){
+        else if (ordemPergunta<30){
             if (rbResposta1.isChecked()) {
                 pontosA += 1;
             } else if (rbResposta2.isChecked()) {
@@ -82,7 +82,7 @@ public class QuizActivity extends AppCompatActivity {
             } else if (rbResposta4.isChecked()) {
                 pontosA += 4;
             }}
-        while (ordemPergunta<40){
+        else if (ordemPergunta<40){
             if (rbResposta1.isChecked()) {
                 pontosS += 1;
             } else if (rbResposta2.isChecked()) {
@@ -92,7 +92,7 @@ public class QuizActivity extends AppCompatActivity {
             } else if (rbResposta4.isChecked()) {
                 pontosS += 4;
             }}
-        while (ordemPergunta<50){
+        else if (ordemPergunta<50){
             if (rbResposta1.isChecked()) {
                 pontosE += 1;
             } else if (rbResposta2.isChecked()) {
@@ -102,7 +102,7 @@ public class QuizActivity extends AppCompatActivity {
             } else if (rbResposta4.isChecked()) {
                 pontosE += 4;
             }}
-        while (ordemPergunta<60){
+        else if (ordemPergunta<60){
             if (rbResposta1.isChecked()) {
                 pontosC += 1;
             } else if (rbResposta2.isChecked()) {
