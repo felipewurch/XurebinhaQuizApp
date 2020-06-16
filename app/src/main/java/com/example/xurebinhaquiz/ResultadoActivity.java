@@ -23,6 +23,11 @@ public class ResultadoActivity extends AppCompatActivity {
         resultadoE = (TextView) findViewById(R.id.resultadoE);
         resultadoC = (TextView) findViewById(R.id.resultadoC);
 
-
+       // resultadoR.setText("Sua porcentagem Realista é: "+);
+       // resultadoI.setText("Sua porcentagem Investigativa é: "+);
+       // resultadoA.setText("Sua porcentagem Empreendedora é: "+);
+       // resultadoS.setText("Sua porcentagem Convencional é: "+);
+       // resultadoE.setText("Sua porcentagem Artística é: "+);
+       // resultadoC.setText("Sua porcentagem Social é: "+);
 }
 }
