@@ -74,6 +74,7 @@ public class Questions {
             questionsList.add("Sou muito organizado e detalhista nas coisas. Eﬁcácia é muito importante para mim.");
             questionsList.add("Eu vou até o ﬁm em meus objetivos. Não desisto até atingi-los.");
             questionsList.add("Gosto de satisfazer os outros em relação àquilo que me pedem.");
+            questionsList.add(".");
         }
             public List<String> getQuestionsList(){
             return questionsList;

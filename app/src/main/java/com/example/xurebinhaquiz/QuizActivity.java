@@ -100,19 +100,27 @@ public class QuizActivity extends AppCompatActivity {
                 pontosC += 4;
             }
         }
-        Intent intent = new Intent(this, RespostaActivity.class);
-        startActivity(intent);
+        if (ordemPergunta == 60) {
+
+            calculaPersonalidade();
+            Intent intent = new Intent(this, ResultadoActivity.class);
+            startActivity(intent);
+        }else {
+            Intent intent = new Intent(this, RespostaActivity.class);
+            startActivity(intent);
+        }
     }
 
-    //public calculaPersonalidade() {
-    //     int porcentagemR = 0, porcentagemI = 0, porcentagemA = 0, porcentagemS = 0, porcentagemE = 0, porcentagemC = 0;
-    //    porcentagemR = pontosR/30*100;
-    //    porcentagemI = pontosI/30*100;
-    //    porcentagemA = pontosA/30*100;
-    //    porcentagemS = pontosS/30*100;
-    //    porcentagemE = pontosE/30*100;
-    //    porcentagemC = pontosC/30*100;
-    //}
+    public int[] calculaPersonalidade() {
+        int[] porcentagens = new int[6];
+        porcentagens[0] = pontosR/30*100;
+        porcentagens[1] = pontosI/30*100;
+        porcentagens[2] = pontosA/30*100;
+        porcentagens[3] = pontosS/30*100;
+        porcentagens[4] = pontosE/30*100;
+        porcentagens[5] = pontosC/30*100;
+        return porcentagens;
+    }
 
     @Override
     protected void onRestart() {
@@ -123,15 +131,10 @@ public class QuizActivity extends AppCompatActivity {
         Log.v("PontosS:", String.valueOf(pontosS));
         Log.v("PontosE:", String.valueOf(pontosE));
         Log.v("PontosC:", String.valueOf(pontosC));
+        Log.v("Pergunta:", String.valueOf(ordemPergunta));
 
         ordemPergunta++;
         pergunta.setText(perguntas.getQuestionsList().get(ordemPergunta));
-
-        if (ordemPergunta == 59) {
-            //calculaPersonalidade();
-            Intent intent = new Intent(this, ResultadoActivity.class);
-            startActivity(intent);
-        }
 
     }
 }
