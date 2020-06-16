@@ -8,14 +8,11 @@ import android.widget.RadioButton;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
-import java.util.ArrayList;
-import java.util.List;
 
 public class QuizActivity extends AppCompatActivity {
 
     private Questions perguntas = new Questions();
     private TextView pergunta;
-    private List perguntaRespondida = new ArrayList();
     private RadioButton rbResposta1, rbResposta2, rbResposta3, rbResposta4;
     private int pontosR = 0, pontosI = 0, pontosA = 0, pontosS = 0, pontosE = 0, pontosC = 0, ordemPergunta = 0;
 
@@ -24,14 +21,16 @@ public class QuizActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz);
         getSupportActionBar().hide();
+        if(savedInstanceState == null) {
 
-        pergunta = (TextView) findViewById(R.id.pergunta);
-        rbResposta1 = (RadioButton) findViewById(R.id.rbResposta1);
-        rbResposta2 = (RadioButton) findViewById(R.id.rbResposta2);
-        rbResposta3 = (RadioButton) findViewById(R.id.rbResposta3);
-        rbResposta4 = (RadioButton) findViewById(R.id.rbResposta4);
-        pergunta.setText(perguntas.getQuestionsList().get(ordemPergunta));
-        perguntaRespondida.add(ordemPergunta);
+            pergunta = (TextView) findViewById(R.id.pergunta);
+            rbResposta1 = (RadioButton) findViewById(R.id.rbResposta1);
+            rbResposta2 = (RadioButton) findViewById(R.id.rbResposta2);
+            rbResposta3 = (RadioButton) findViewById(R.id.rbResposta3);
+            rbResposta4 = (RadioButton) findViewById(R.id.rbResposta4);
+            pergunta.setText(perguntas.getQuestionsList().get(ordemPergunta));
+            ordemPergunta++;
+        }
 
     }
 
@@ -98,21 +97,19 @@ public class QuizActivity extends AppCompatActivity {
                 pontosC += 4;
             }
         }
+        if (ordemPergunta == 60) {
 
-        if (ordemPergunta == 59) {
-
-            //calculaPersonalidade();
+            calculaPersonalidade();
             Intent intent = new Intent(this, ResultadoActivity.class);
             startActivity(intent);
         }else {
             Intent intent = new Intent(this, RespostaActivity.class);
             startActivity(intent);
         }
-
     }
 
     public int[] calculaPersonalidade() {
-        int[] porcentagens = new int[5];
+        int[] porcentagens = new int[6];
         porcentagens[0] = pontosR/30*100;
         porcentagens[1] = pontosI/30*100;
         porcentagens[2] = pontosA/30*100;
@@ -132,7 +129,9 @@ public class QuizActivity extends AppCompatActivity {
         Log.v("PontosE:", String.valueOf(pontosE));
         Log.v("PontosC:", String.valueOf(pontosC));
 
-        ordemPergunta++;
+
+        Log.v("Pergunta:", String.valueOf(ordemPergunta));
         pergunta.setText(perguntas.getQuestionsList().get(ordemPergunta));
+        ordemPergunta++;
     }
 }
