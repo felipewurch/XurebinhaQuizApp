@@ -99,8 +99,6 @@ public class QuizActivity extends AppCompatActivity {
             }
         }
         if (ordemPergunta == 60) {
-
-
             Intent intent = new Intent(this, ResultadoActivity.class);
             startActivity(intent);
         } else {
@@ -121,6 +119,11 @@ public class QuizActivity extends AppCompatActivity {
         Log.v("PontosE:", String.valueOf(pontosE));
         Log.v("PontosC:", String.valueOf(pontosC));
         Log.v("Pergunta:", String.valueOf(ordemPergunta));
+
+        rbResposta1.setChecked(false);
+        rbResposta2.setChecked(false);
+        rbResposta3.setChecked(false);
+        rbResposta4.setChecked(false);
 
         pergunta.setText(perguntas.getQuestionsList().get(ordemPergunta));
 

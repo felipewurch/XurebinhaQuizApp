@@ -29,6 +29,8 @@ public class LoginActivity extends AppCompatActivity {
 
         Log.v("name:", String.valueOf(name_));
         Log.v("email:", String.valueOf(email_));
+
+        //todo salvar?
         Intent intent = new Intent(this, QuizActivity.class);
         startActivity(intent);
     }
