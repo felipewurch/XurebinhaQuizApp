@@ -15,7 +15,7 @@ public class MainActivity extends AppCompatActivity {
         getSupportActionBar().hide();
     }
     public void btnComecarOnClick(View v){
-        Intent intent = new Intent(this, QuizActivity.class);
+        Intent intent = new Intent(this, LoginActivity.class);
         startActivity(intent);
     }
 }
