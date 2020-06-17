@@ -138,4 +138,5 @@ public class QuizActivity extends AppCompatActivity {
         pergunta.setText(perguntas.getQuestionsList().get(ordemPergunta));
         ordemPergunta++;
     }
+    
 }
