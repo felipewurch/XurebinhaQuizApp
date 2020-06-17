@@ -99,7 +99,20 @@ public class QuizActivity extends AppCompatActivity {
             }
         }
         if (ordemPergunta == 60) {
+
+            calculaPersonalidade();
+            //int[] resultadoPersonalidade = calculaPersonalidade();
+
+            Bundle resultadoQuiz = new Bundle();
+            resultadoQuiz.putDouble("pontosR", pontosR/30*100);
+            resultadoQuiz.putDouble("pontosI", pontosI/30*100);
+            resultadoQuiz.putDouble("pontosA", pontosA/30*100);
+            resultadoQuiz.putDouble("pontosS", pontosS/30*100);
+            resultadoQuiz.putDouble("pontosE", pontosE/30*100);
+            resultadoQuiz.putDouble("pontosC", pontosC/30*100);
+
             Intent intent = new Intent(this, ResultadoActivity.class);
+            intent.putExtras(resultadoQuiz);
             startActivity(intent);
         } else {
             Intent intent = new Intent(this, RespostaActivity.class);
