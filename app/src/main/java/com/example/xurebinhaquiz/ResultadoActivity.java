@@ -25,9 +25,9 @@ public class ResultadoActivity extends AppCompatActivity {
 
        // resultadoR.setText("Sua porcentagem Realista é: "+);
        // resultadoI.setText("Sua porcentagem Investigativa é: "+);
-       // resultadoA.setText("Sua porcentagem Empreendedora é: "+);
-       // resultadoS.setText("Sua porcentagem Convencional é: "+);
-       // resultadoE.setText("Sua porcentagem Artística é: "+);
-       // resultadoC.setText("Sua porcentagem Social é: "+);
+       // resultadoA.setText("Sua porcentagem Artística é: "+);
+       // resultadoS.setText("Sua porcentagem Social é: "+);
+       // resultadoE.setText("Sua porcentagem Empreendedora é: "+);
+       // resultadoC.setText("Sua porcentagem Convencional é: "+);
 }
 }
