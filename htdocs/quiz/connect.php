@@ -1,2 +1,2 @@
 <?php
-$conn = mysqli_connect ("localhost", "root", "", "android");
+$conn = mysqli_connect ("localhost", "root", "", "quiz");
