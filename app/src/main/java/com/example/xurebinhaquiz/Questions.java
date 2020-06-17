@@ -64,21 +64,17 @@ public class Questions {
         questionsList.add("Estou sempre procurando novas oportunidades, novos caminhos a seguir.");
         questionsList.add("Preﬁro ser o dono de um negócio do que trabalhar para alguém. ");
 
-            questionsList.add("Aceito bem as regras e o contexto no qual vivo. Gosto de limites claros.");
-            questionsList.add("Sou introvertido, me resguardo e não me exponho muito.");
-            questionsList.add("Cuido de minhas coisas e gosto de conservá-las.");
-            questionsList.add("Sou bem calmo e tenho bom equilíbrio emocional.");
-            questionsList.add("Preﬁro ter um plano de ação, uma rotina deﬁnida de trabalho.");
-            questionsList.add("Sou um tipo de pessoa estável, conﬁável, adequada à realidade.");
-            questionsList.add("Respeito a ética, guardo segredos, cumpro com o combinado.");
-            questionsList.add("Sou muito organizado e detalhista nas coisas. Eﬁcácia é muito importante para mim.");
-            questionsList.add("Eu vou até o ﬁm em meus objetivos. Não desisto até atingi-los.");
-            questionsList.add("Gosto de satisfazer os outros em relação àquilo que me pedem.");
-            questionsList.add(".");
-        }
-            public List<String> getQuestionsList(){
-            return questionsList;
-            }
+        questionsList.add("Aceito bem as regras e o contexto no qual vivo. Gosto de limites claros.");
+        questionsList.add("Sou introvertido, me resguardo e não me exponho muito.");
+        questionsList.add("Cuido de minhas coisas e gosto de conservá-las.");
+        questionsList.add("Sou bem calmo e tenho bom equilíbrio emocional.");
+        questionsList.add("Preﬁro ter um plano de ação, uma rotina deﬁnida de trabalho.");
+        questionsList.add("Sou um tipo de pessoa estável, conﬁável, adequada à realidade.");
+        questionsList.add("Respeito a ética, guardo segredos, cumpro com o combinado.");
+        questionsList.add("Sou muito organizado e detalhista nas coisas. Eﬁcácia é muito importante para mim.");
+        questionsList.add("Eu vou até o ﬁm em meus objetivos. Não desisto até atingi-los.");
+        questionsList.add("Gosto de satisfazer os outros em relação àquilo que me pedem.");
+        questionsList.add(".");
     }
 
     public List<String> getQuestionsList() {

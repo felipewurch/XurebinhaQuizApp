@@ -34,6 +34,7 @@ public class QuizActivity extends AppCompatActivity {
         rbResposta4 = (RadioButton) findViewById(R.id.rbResposta4);
         pergunta.setText(perguntas.getQuestionsList().get(ordemPergunta));
         perguntaRespondida.add(ordemPergunta);
+        ordemPergunta++;
 
     }
 
@@ -133,8 +134,8 @@ public class QuizActivity extends AppCompatActivity {
         Log.v("PontosC:", String.valueOf(pontosC));
         Log.v("Pergunta:", String.valueOf(ordemPergunta));
 
-        ordemPergunta++;
-        pergunta.setText(perguntas.getQuestionsList().get(ordemPergunta));
 
+        pergunta.setText(perguntas.getQuestionsList().get(ordemPergunta));
+        ordemPergunta++;
     }
 }
