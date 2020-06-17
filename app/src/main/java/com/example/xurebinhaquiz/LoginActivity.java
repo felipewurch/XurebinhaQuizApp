@@ -18,6 +18,7 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        getSupportActionBar().hide();
 
         name = (EditText) findViewById(R.id.name);
         email = (EditText) findViewById(R.id.email);
@@ -26,6 +27,7 @@ public class LoginActivity extends AppCompatActivity {
     public void btnEnviarOnClick(View v){
         name_ = name.getText().toString();
         email_= email.getText().toString();
+
         Log.v("name:", String.valueOf(name_));
         Log.v("email:", String.valueOf(email_));
         Intent intent = new Intent(this, QuizActivity.class);

@@ -34,7 +34,6 @@ public class QuizActivity extends AppCompatActivity {
         rbResposta4 = (RadioButton) findViewById(R.id.rbResposta4);
         pergunta.setText(perguntas.getQuestionsList().get(ordemPergunta));
         perguntaRespondida.add(ordemPergunta);
-        ordemPergunta++;
 
     }
 
@@ -103,25 +102,17 @@ public class QuizActivity extends AppCompatActivity {
         }
         if (ordemPergunta == 60) {
 
-            calculaPersonalidade();
+
             Intent intent = new Intent(this, ResultadoActivity.class);
             startActivity(intent);
         }else {
             Intent intent = new Intent(this, RespostaActivity.class);
             startActivity(intent);
         }
+        ordemPergunta++;
+
     }
 
-    public int[] calculaPersonalidade() {
-        int[] porcentagens = new int[6];
-        porcentagens[0] = pontosR/30*100;
-        porcentagens[1] = pontosI/30*100;
-        porcentagens[2] = pontosA/30*100;
-        porcentagens[3] = pontosS/30*100;
-        porcentagens[4] = pontosE/30*100;
-        porcentagens[5] = pontosC/30*100;
-        return porcentagens;
-    }
 
     @Override
     protected void onRestart() {
@@ -136,7 +127,7 @@ public class QuizActivity extends AppCompatActivity {
 
 
         pergunta.setText(perguntas.getQuestionsList().get(ordemPergunta));
-        ordemPergunta++;
+
     }
     
 }

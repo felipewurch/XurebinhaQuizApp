@@ -7,6 +7,18 @@
     android:background="#404349"
     tools:context=".ResultadoActivity">
 
+    <Button
+        android:id="@+id/buttonDicionario"
+        android:layout_width="148dp"
+        android:layout_height="66dp"
+        android:layout_marginTop="64dp"
+        android:onClick="btnDicionarioOnClick"
+        android:text="Dicionario"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.205"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/resultadoC" />
+
     <TextView
         android:id="@+id/resultadoI"
         android:layout_width="335dp"
@@ -87,9 +99,10 @@
         android:layout_width="148dp"
         android:layout_height="66dp"
         android:text="Refazer"
+        android:onClick="btnRefazerOnClick"
         app:layout_constraintBottom_toTopOf="@+id/imageView2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.768"
         app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView

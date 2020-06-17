@@ -2,8 +2,10 @@ package com.example.xurebinhaquiz;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.TextView;
 
 public class ResultadoActivity extends AppCompatActivity {
@@ -15,6 +17,7 @@ public class ResultadoActivity extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_resultado);
+        getSupportActionBar().hide();
 
         resultadoR = (TextView) findViewById(R.id.resultadoR);
         resultadoI = (TextView) findViewById(R.id.resultadoI);
@@ -30,4 +33,14 @@ public class ResultadoActivity extends AppCompatActivity {
        // resultadoE.setText("Sua porcentagem Empreendedora é: "+);
        // resultadoC.setText("Sua porcentagem Convencional é: "+);
 }
+
+    public void btnDicionarioOnClick(View view) {
+        Intent intent = new Intent(this, DicionarioActivity.class);
+        startActivity(intent);
+    }
+
+    public void btnRefazerOnClick(View view) {
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+    }
 }

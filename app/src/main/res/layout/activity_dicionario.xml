@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#404349"
+    tools:context=".DicionarioActivity">
+
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="As pessoas desse tipo, gostam de observar e entender tudo o que está ao seu redor, buscando explicações para o modo como as coisas acontecem. São pessoas muito críticas e independentes em suas ideias. Em geral, são metódicas, bem organizadas, racionais e reservadas em alguns casos. Suas emoções são mais contidas. Gostam de adquirir conhecimento e se alimentam do saber, mostrando muita curiosidade para observar, experimentar, estimar resultados, elaborar teorias e modelos."
+        android:textColor="#FFFFFF"
+        android:textSize="10sp"
+        tools:layout_editor_absoluteX="55dp"
+        tools:layout_editor_absoluteY="378dp" />
+
+    <TextView
+        android:id="@+id/textView15"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Apreciam o trabalho concreto, bem organizado, rotineiro e com regras claras. Não gostam de muita proximidade e intimidade, nem sentem muita necessidade de contato afetivo, especialmente no trabalho, preferindo ás vezes o isolamento. Mostram preferência por atividades de manipulação de dados e fatos, como organização de arquivos e registros. Também gostam de lidar com números e organização, sempre de acordo com planos préestabelecidos. "
+        android:textColor="#FFFFFF"
+        android:textSize="10sp"
+        tools:layout_editor_absoluteX="4dp"
+        tools:layout_editor_absoluteY="64dp" />
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Artístico "
+        android:textColor="#FFFFFF"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/textView16"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="Gostam de executar as atividades artística, e não somente de apreciá-las. Não gostam de rotina nem de atividades controladas. Preferem realizar tarefas nas quais possam mostrar seus talentos criativos e expressivos. Compreender e expressar as emoções é fundamental. São pessoas originais e inovadoras, expressivas, que gostam de chamar a atenção. São também muito emotivas e intuitivas. Podem ser impulsivos, pois gostam de novidades,espontaneidadee principalmente de liberdade."
+        android:textColor="#FFFFFF"
+        android:textSize="10sp"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="185dp" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Realístico "
+        android:textColor="#FFFFFF"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="As pessoas com esse perfil de personalidade são práticas e gostam de agir. São vistas como ajustadas e simples. São persistentes, sensatas e na maioria das vezes sinceras, diretas ao modo de se relacionar. Gostam de dizer o que pensam, sem muitos rodeios. Sentem apreço por todas as coisas. "
+        android:textColor="#FFFFFF"
+        android:textSize="10sp"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="131dp" />
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Social "
+        android:textColor="#FFFFFF"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/textView14"
+        android:layout_width="264dp"
+        android:layout_height="104dp"
+        android:layout_marginBottom="731dp"
+        android:text="Os empreendedores gostam de manipular, coordenar e supervisionar as atividades dos outros, seja para alcançar seus próprios objetivos, seja para atingir as metas da empresa onde trabalham, ou ainda para conseguir resultados produtivos e obter lucro. São pessoas ativas, que gostam de aventuras, riscos e dos bons prazeres da vida material. Estão sempre buscando novidades e se mostram autoconfiantes. Geralmente são otimistas, sociáveis, líderes, competitivos. "
+        android:textColor="#FFFFFF"
+        android:textSize="10sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.924"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Convencional "
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        tools:layout_editor_absoluteX="49dp"
+        tools:layout_editor_absoluteY="24dp" />
+
+    <TextView
+        android:id="@+id/textView17"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:text="Gostam e buscam interações com os outros, seja para ajudar, informar, treinar, desenvolver, curar, esclarecer, ensinar, ouvir ou cuidar. Mostram bastante interesse pelo bem-estar dos outros, pelo trabalho social, humanitário e religioso, e pela boa e justa organização da sociedade. São pessoas atenciosas, compreensivas com os problemas dos outros, simpáticas e colaborativas. Gostam de se dedicar ao outro e também se mostram dominantes. São pessoas em geral responsáveis, idealistas, gentis e de fácil relacionamento."
+        android:textColor="#FFFFFF"
+        android:textSize="10sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Empreendedor "
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="45dp" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Investigativo "
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        tools:layout_editor_absoluteX="72dp"
+        tools:layout_editor_absoluteY="24dp" />
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Voltar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="623dp" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
