@@ -3,7 +3,6 @@ package com.example.xurebinhaquiz;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-
 import androidx.annotation.Nullable;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
@@ -14,7 +13,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String EMAIL = "email";
     private static final int VERSAO = 1;
 
-    
 
     public DatabaseHelper(@Nullable Context context, @Nullable String name, @Nullable SQLiteDatabase.CursorFactory factory, int version) {
         super(context, name, factory, version);

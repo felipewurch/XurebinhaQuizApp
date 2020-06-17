@@ -1,25 +1,23 @@
 package com.example.xurebinhaquiz;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.RadioButton;
-import android.widget.RadioGroup;
 import android.widget.TextView;
+import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class QuizActivity extends AppCompatActivity {
 
-    Questions perguntas = new Questions();
-    TextView pergunta;
-    List perguntaRespondida = new ArrayList();
-    RadioButton rbResposta1, rbResposta2, rbResposta3, rbResposta4;
-    int pontosR = 0, pontosI = 0, pontosA = 0, pontosS = 0, pontosE = 0, pontosC = 0, ordemPergunta = 0;
+    private Questions perguntas = new Questions();
+    private TextView pergunta;
+    private List perguntaRespondida = new ArrayList();
+    private RadioButton rbResposta1, rbResposta2, rbResposta3, rbResposta4;
+    private int pontosR = 0, pontosI = 0, pontosA = 0, pontosS = 0, pontosE = 0, pontosC = 0, ordemPergunta = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -105,14 +103,13 @@ public class QuizActivity extends AppCompatActivity {
 
             Intent intent = new Intent(this, ResultadoActivity.class);
             startActivity(intent);
-        }else {
+        } else {
             Intent intent = new Intent(this, RespostaActivity.class);
             startActivity(intent);
         }
         ordemPergunta++;
 
     }
-
 
     @Override
     protected void onRestart() {
@@ -125,9 +122,8 @@ public class QuizActivity extends AppCompatActivity {
         Log.v("PontosC:", String.valueOf(pontosC));
         Log.v("Pergunta:", String.valueOf(ordemPergunta));
 
-
         pergunta.setText(perguntas.getQuestionsList().get(ordemPergunta));
 
     }
-    
+
 }
