@@ -1,17 +1,14 @@
 package com.example.xurebinhaquiz;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class ResultadoActivity extends AppCompatActivity {
 
-    TextView resultadoR,resultadoI,resultadoA,resultadoS,resultadoE,resultadoC;
-    private Double pontosR,pontosI,pontosA,pontosS,pontosE,pontosC;
+    private TextView resultadoR, resultadoI, resultadoA, resultadoS, resultadoE, resultadoC;
+    private Double pontosR, pontosI, pontosA, pontosS, pontosE, pontosC;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,11 +33,11 @@ public class ResultadoActivity extends AppCompatActivity {
         resultadoE = (TextView) findViewById(R.id.resultadoE);
         resultadoC = (TextView) findViewById(R.id.resultadoC);
 
-       resultadoR.setText("Sua porcentagem Realista é: " + pontosR);
-       resultadoI.setText("Sua porcentagem Investigativa é: " + pontosI);
-       resultadoA.setText("Sua porcentagem Artística é: " + pontosA);
-       resultadoS.setText("Sua porcentagem Social é: " + pontosS);
-       resultadoE.setText("Sua porcentagem Empreendedora é: " + pontosE);
-       resultadoC.setText("Sua porcentagem Convencional é: " + pontosC);
-}
+        resultadoR.setText("Sua porcentagem Realista é: " + pontosR);
+        resultadoI.setText("Sua porcentagem Investigativa é: " + pontosI);
+        resultadoA.setText("Sua porcentagem Artística é: " + pontosA);
+        resultadoS.setText("Sua porcentagem Social é: " + pontosS);
+        resultadoE.setText("Sua porcentagem Empreendedora é: " + pontosE);
+        resultadoC.setText("Sua porcentagem Convencional é: " + pontosC);
+    }
 }

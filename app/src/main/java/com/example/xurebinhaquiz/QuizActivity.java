@@ -100,7 +100,7 @@ public class QuizActivity extends AppCompatActivity {
         }
         if (ordemPergunta == 60) {
 
-            calculaPersonalidade();
+            //calculaPersonalidade();
             //int[] resultadoPersonalidade = calculaPersonalidade();
 
             Bundle resultadoQuiz = new Bundle();
