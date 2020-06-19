@@ -6,24 +6,42 @@ import android.util.Log;
 import android.view.View;
 import android.widget.RadioButton;
 import android.widget.TextView;
+import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
+import com.android.volley.*;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class QuizActivity extends AppCompatActivity {
 
     private Questions perguntas = new Questions();
+    private int idUser;
     private TextView pergunta;
     private List perguntaRespondida = new ArrayList();
     private RadioButton rbResposta1, rbResposta2, rbResposta3, rbResposta4;
+<<<<<<< HEAD
     private int pontosR = 0, pontosI = 0, pontosA = 0, pontosS = 0, pontosE = 0, pontosC = 0, ordemPergunta = 50;
+=======
+    private int pontosR = 0, pontosI = 0, pontosA = 0, pontosS = 0, pontosE = 0, pontosC = 0, ordemPergunta = 0;
+    private static String URL_REGIST = "http://localhost/android/updateAwnsers.php";
+>>>>>>> 4be146b69a49c310f97a192e77602fc4d896f41c
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz);
-        getSupportActionBar().hide();
+
+        Intent intent = getIntent();
+        Bundle resultQuiz = intent.getExtras();
+
+        idUser = resultQuiz.getInt("idSigIn");
 
         pergunta = (TextView) findViewById(R.id.pergunta);
         rbResposta1 = (RadioButton) findViewById(R.id.rbResposta1);
@@ -96,6 +114,8 @@ public class QuizActivity extends AppCompatActivity {
             resultadoQuiz.putDouble("pontosE", pontosE/30.00*100.00);
             resultadoQuiz.putDouble("pontosC", pontosC/30.00*100.00);
 
+            updateAwnsers();
+
             Intent intent = new Intent(this, ResultadoActivity.class);
             intent.putExtras(resultadoQuiz);
             startActivity(intent);
@@ -105,6 +125,45 @@ public class QuizActivity extends AppCompatActivity {
         }
         ordemPergunta++;
 
+    }
+
+    private void updateAwnsers() {
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, URL_REGIST, new Response.Listener<String>() {
+
+            @Override
+            public void onResponse(String response) {
+                try {
+                    JSONObject jsonObject = new JSONObject(response);
+                    Toast.makeText(QuizActivity.this, "Reposta salva!", Toast.LENGTH_LONG).show();
+                    Log.v("ok:", "Reposta salva!");
+
+                } catch (JSONException e) {
+                    Toast.makeText(QuizActivity.this, "ERRO: " + e.getMessage(), Toast.LENGTH_LONG).show();
+                    Log.v("Erro:", String.valueOf(e.getMessage()));
+                }
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Toast.makeText(QuizActivity.this, "Volley ERROR: " + error.getMessage(), Toast.LENGTH_LONG).show();
+            }
+        }) {
+            public Map<String, String> getParams() throws AuthFailureError {
+                Map<String, String> params = new HashMap<>();
+                params.put("id", String.valueOf(idUser));
+                params.put("porcentagemR", String.valueOf(pontosR/30.00*100.00));
+                params.put("porcentagemI", String.valueOf(pontosI/30.00*100.00));
+                params.put("porcentagemA", String.valueOf(pontosA/30.00*100.00));
+                params.put("porcentagemS", String.valueOf(pontosS/30.00*100.00));
+                params.put("porcentagemE", String.valueOf(pontosE/30.00*100.00));
+                params.put("porcentagemC", String.valueOf(pontosC/30.00*100.00));
+
+                return params;
+            }
+        };
+
+        RequestQueue requestQueue = Volley.newRequestQueue(this);
+        requestQueue.add(stringRequest);
     }
 
     @Override
