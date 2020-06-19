@@ -20,7 +20,7 @@ import java.util.Map;
 public class LoginActivity extends AppCompatActivity {
 
     private EditText edit_nome, edit_email;
-    private static String URL_REGIST = "http://192.168.0.106/android/sigin.php";
+    private static String URL_REGIST = "http://localhost/android/sigin.php";
     private int idSigin;
 
     @Override
@@ -56,14 +56,12 @@ public class LoginActivity extends AppCompatActivity {
                 try {
                     JSONObject jsonObject = new JSONObject(response);
                     idSigin = Integer.parseInt(jsonObject.getString("id"));
-                    Toast.makeText(LoginActivity.this, "Logado com sucesso!", Toast.LENGTH_LONG).show();
-                    Log.v("ok:", "Logado com sucesso!");
-                    //System.out.println("Logado com sucesso!");
+                    Toast.makeText(LoginActivity.this, "Cadastrado com sucesso!", Toast.LENGTH_LONG).show();
+                    Log.v("ok: ", "Cadastrado com sucesso!");
 
                 } catch (JSONException e) {
                     Toast.makeText(LoginActivity.this, "ERRO: " + e.getMessage(), Toast.LENGTH_LONG).show();
-                    Log.v("XXXXErro:", String.valueOf(e.getMessage()));
-                    //System.out.println("Erro: "+ String.valueOf(e.getMessage()));
+                    Log.v("Erro: ", String.valueOf(e.getMessage()));
                 }
             }
         }, new Response.ErrorListener() {

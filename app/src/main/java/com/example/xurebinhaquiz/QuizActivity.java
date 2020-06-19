@@ -27,7 +27,7 @@ public class QuizActivity extends AppCompatActivity {
     private List perguntaRespondida = new ArrayList();
     private RadioButton rbResposta1, rbResposta2, rbResposta3, rbResposta4;
     private int pontosR = 0, pontosI = 0, pontosA = 0, pontosS = 0, pontosE = 0, pontosC = 0, ordemPergunta = 0;
-    private static String URL_REGIST = "http://192.168.0.106/android/updateAwnsers.php";
+    private static String URL_REGIST = "http://localhost/android/updateAwnsers.php";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -122,6 +122,8 @@ public class QuizActivity extends AppCompatActivity {
             resultadoQuiz.putDouble("pontosE", pontosE/30.00*100.00);
             resultadoQuiz.putDouble("pontosC", pontosC/30.00*100.00);
 
+            updateAwnsers();
+
             Intent intent = new Intent(this, ResultadoActivity.class);
             intent.putExtras(resultadoQuiz);
             startActivity(intent);
@@ -130,7 +132,6 @@ public class QuizActivity extends AppCompatActivity {
             startActivity(intent);
         }
         ordemPergunta++;
-        updateAwnsers();
 
     }
 
@@ -158,12 +159,12 @@ public class QuizActivity extends AppCompatActivity {
             public Map<String, String> getParams() throws AuthFailureError {
                 Map<String, String> params = new HashMap<>();
                 params.put("id", String.valueOf(idUser));
-                params.put("pontosR", String.valueOf(pontosR));
-                params.put("pontosI", String.valueOf(pontosI));
-                params.put("pontosA", String.valueOf(pontosA));
-                params.put("pontosS", String.valueOf(pontosS));
-                params.put("pontosE", String.valueOf(pontosE));
-                params.put("pontosC", String.valueOf(pontosC));
+                params.put("porcentagemR", String.valueOf(pontosR/30.00*100.00));
+                params.put("porcentagemI", String.valueOf(pontosI/30.00*100.00));
+                params.put("porcentagemA", String.valueOf(pontosA/30.00*100.00));
+                params.put("porcentagemS", String.valueOf(pontosS/30.00*100.00));
+                params.put("porcentagemE", String.valueOf(pontosE/30.00*100.00));
+                params.put("porcentagemC", String.valueOf(pontosC/30.00*100.00));
 
                 return params;
             }

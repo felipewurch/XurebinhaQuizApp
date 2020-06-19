@@ -12,6 +12,10 @@ if ($_SERVER['REQUEST_METHOD']=='POST'){
     $porcentagemE = $_POST['porcentagemE'];
     $porcentagemC = $_POST['porcentagemC'];
 
+    $dados = mysqli_query($conn,"SELECT id FROM personalidade order by id desc");
+    $linha = mysqli_fetch_assoc($dados);
+    $id    = $linha['id'];
+
     $sql          = "UPDATE personalidade ".
                     "   SET porcentagemR = $porcentagemR,".
                     "       porcentagemI = $porcentagemI,".
