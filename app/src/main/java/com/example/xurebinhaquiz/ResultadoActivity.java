@@ -2,6 +2,7 @@ package com.example.xurebinhaquiz;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -33,11 +34,19 @@ public class ResultadoActivity extends AppCompatActivity {
         resultadoE = (TextView) findViewById(R.id.resultadoE);
         resultadoC = (TextView) findViewById(R.id.resultadoC);
 
-        resultadoR.setText("Sua porcentagem Realista é: " + pontosR);
-        resultadoI.setText("Sua porcentagem Investigativa é: " + pontosI);
-        resultadoA.setText("Sua porcentagem Artística é: " + pontosA);
-        resultadoS.setText("Sua porcentagem Social é: " + pontosS);
-        resultadoE.setText("Sua porcentagem Empreendedora é: " + pontosE);
-        resultadoC.setText("Sua porcentagem Convencional é: " + pontosC);
+        resultadoR.setText("Sua porcentagem Realista é: " + (int)Math.round(pontosR));
+        resultadoI.setText("Sua porcentagem Investigativa é: " + (int)Math.round(pontosI));
+        resultadoA.setText("Sua porcentagem Artística é: " + (int)Math.round(pontosA));
+        resultadoS.setText("Sua porcentagem Social é: " + (int)Math.round(pontosS));
+        resultadoE.setText("Sua porcentagem Empreendedora é: " + (int)Math.round(pontosE));
+        resultadoC.setText("Sua porcentagem Convencional é: " + (int)Math.round(pontosC));
+    }
+    public void btnRefazerOnClick(View v){
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+    }
+    public void btnDicionarioOnClick(View v){
+        Intent intent = new Intent(this, DicionarioActivity.class);
+        startActivity(intent);
     }
 }

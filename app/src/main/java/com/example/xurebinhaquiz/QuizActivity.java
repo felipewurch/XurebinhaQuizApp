@@ -17,7 +17,7 @@ public class QuizActivity extends AppCompatActivity {
     private TextView pergunta;
     private List perguntaRespondida = new ArrayList();
     private RadioButton rbResposta1, rbResposta2, rbResposta3, rbResposta4;
-    private int pontosR = 0, pontosI = 0, pontosA = 0, pontosS = 0, pontosE = 0, pontosC = 0, ordemPergunta = 0;
+    private int pontosR = 0, pontosI = 0, pontosA = 0, pontosS = 0, pontosE = 0, pontosC = 0, ordemPergunta = 50;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,64 +38,52 @@ public class QuizActivity extends AppCompatActivity {
     public void btnResponderOnClick(View v) {
 
         if (ordemPergunta < 10) {
-            if (rbResposta1.isChecked()) {
+            if (rbResposta2.isChecked()) {
                 pontosR += 1;
-            } else if (rbResposta2.isChecked()) {
-                pontosR += 2;
             } else if (rbResposta3.isChecked()) {
-                pontosR += 3;
+                pontosR += 2;
             } else if (rbResposta4.isChecked()) {
-                pontosR += 4;
+                pontosR += 3;
             }
         } else if (ordemPergunta < 20) {
-            if (rbResposta1.isChecked()) {
+            if (rbResposta2.isChecked()) {
                 pontosI += 1;
-            } else if (rbResposta2.isChecked()) {
-                pontosI += 2;
             } else if (rbResposta3.isChecked()) {
-                pontosI += 3;
+                pontosI += 2;
             } else if (rbResposta4.isChecked()) {
-                pontosI += 4;
+                pontosI += 3;
             }
         } else if (ordemPergunta < 30) {
-            if (rbResposta1.isChecked()) {
+            if (rbResposta2.isChecked()) {
                 pontosA += 1;
-            } else if (rbResposta2.isChecked()) {
-                pontosA += 2;
             } else if (rbResposta3.isChecked()) {
-                pontosA += 3;
+                pontosA += 2;
             } else if (rbResposta4.isChecked()) {
-                pontosA += 4;
+                pontosA += 3;
             }
         } else if (ordemPergunta < 40) {
-            if (rbResposta1.isChecked()) {
+            if (rbResposta2.isChecked()) {
                 pontosS += 1;
-            } else if (rbResposta2.isChecked()) {
-                pontosS += 2;
             } else if (rbResposta3.isChecked()) {
-                pontosS += 3;
+                pontosS += 2;
             } else if (rbResposta4.isChecked()) {
-                pontosS += 4;
+                pontosS += 3;
             }
         } else if (ordemPergunta < 50) {
-            if (rbResposta1.isChecked()) {
+            if (rbResposta2.isChecked()) {
                 pontosE += 1;
-            } else if (rbResposta2.isChecked()) {
-                pontosE += 2;
             } else if (rbResposta3.isChecked()) {
-                pontosE += 3;
+                pontosE += 2;
             } else if (rbResposta4.isChecked()) {
-                pontosE += 4;
+                pontosE += 3;
             }
         } else if (ordemPergunta < 60) {
-            if (rbResposta1.isChecked()) {
+            if (rbResposta2.isChecked()) {
                 pontosC += 1;
-            } else if (rbResposta2.isChecked()) {
-                pontosC += 2;
             } else if (rbResposta3.isChecked()) {
-                pontosC += 3;
+                pontosC += 2;
             } else if (rbResposta4.isChecked()) {
-                pontosC += 4;
+                pontosC += 3;
             }
         }
         if (ordemPergunta == 60) {
@@ -129,11 +117,6 @@ public class QuizActivity extends AppCompatActivity {
         Log.v("PontosE:", String.valueOf(pontosE));
         Log.v("PontosC:", String.valueOf(pontosC));
         Log.v("Pergunta:", String.valueOf(ordemPergunta));
-
-        rbResposta1.setChecked(false);
-        rbResposta2.setChecked(false);
-        rbResposta3.setChecked(false);
-        rbResposta4.setChecked(false);
 
         pergunta.setText(perguntas.getQuestionsList().get(ordemPergunta));
 
