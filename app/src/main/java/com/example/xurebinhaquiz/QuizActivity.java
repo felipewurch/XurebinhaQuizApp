@@ -100,16 +100,13 @@ public class QuizActivity extends AppCompatActivity {
         }
         if (ordemPergunta == 60) {
 
-            //calculaPersonalidade();
-            //int[] resultadoPersonalidade = calculaPersonalidade();
-
             Bundle resultadoQuiz = new Bundle();
-            resultadoQuiz.putDouble("pontosR", pontosR/30*100);
-            resultadoQuiz.putDouble("pontosI", pontosI/30*100);
-            resultadoQuiz.putDouble("pontosA", pontosA/30*100);
-            resultadoQuiz.putDouble("pontosS", pontosS/30*100);
-            resultadoQuiz.putDouble("pontosE", pontosE/30*100);
-            resultadoQuiz.putDouble("pontosC", pontosC/30*100);
+            resultadoQuiz.putDouble("pontosR", pontosR/30.00*100.00);
+            resultadoQuiz.putDouble("pontosI", pontosI/30.00*100.00);
+            resultadoQuiz.putDouble("pontosA", pontosA/30.00*100.00);
+            resultadoQuiz.putDouble("pontosS", pontosS/30.00*100.00);
+            resultadoQuiz.putDouble("pontosE", pontosE/30.00*100.00);
+            resultadoQuiz.putDouble("pontosC", pontosC/30.00*100.00);
 
             Intent intent = new Intent(this, ResultadoActivity.class);
             intent.putExtras(resultadoQuiz);
