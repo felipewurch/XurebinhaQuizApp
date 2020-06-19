@@ -2,13 +2,13 @@ CREATE DATABASE quiz;
 USE quiz;
 CREATE TABLE personalidade(
 	id           INT AUTO_INCREMENT,
-	nome         VARCHAR(20) NOT NULL,
-	email        VARCHAR(35) NOT NULL,
-	porcentagemR INT, 
+	nome         VARCHAR(100) NOT NULL,
+	email        VARCHAR(100) NOT NULL,
+	porcentagemR INT,
 	porcentagemI INT,
-	porcentagemA INT, 
-	porcentagemS INT, 
-	porcentagemE INT, 
+	porcentagemA INT,
+	porcentagemS INT,
+	porcentagemE INT,
 	porcentagemC INT,
 
 	PRIMARY KEY(id)
