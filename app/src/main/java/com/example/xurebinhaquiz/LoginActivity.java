@@ -12,6 +12,8 @@ public class LoginActivity extends AppCompatActivity {
     private String email_, name_;
     private EditText name, email;
 
+    private static String URL_REGIST = "http://localhost/android/register.php";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
