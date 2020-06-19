@@ -27,7 +27,7 @@ public class QuizActivity extends AppCompatActivity {
     private List perguntaRespondida = new ArrayList();
     private RadioButton rbResposta1, rbResposta2, rbResposta3, rbResposta4;
     private int pontosR = 0, pontosI = 0, pontosA = 0, pontosS = 0, pontosE = 0, pontosC = 0, ordemPergunta = 0;
-    private static String URL_REGIST = "http://localhost/android/updateAwnsers.php";
+    private static String URL_REGIST = "http://192.168.0.106/android/updateAwnsers.php";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
