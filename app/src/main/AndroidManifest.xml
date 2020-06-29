@@ -11,8 +11,10 @@
         android:networkSecurityConfig="@xml/network_security_config"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity android:name=".DicionarioActivity"></activity>
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true">
+        <activity android:name=".ResultsActivity"></activity>
+        <activity android:name=".DicionarioActivity" />
         <activity android:name=".ResultadoActivity" />
         <activity android:name=".LoginActivity" />
         <activity android:name=".RespostaActivity" />

@@ -4,27 +4,61 @@
                                                    xmlns:tools="http://schemas.android.com/tools"
                                                    android:layout_width="match_parent"
                                                    android:layout_height="match_parent"
-                                                   android:background="#404349"
+                                                   android:background="@drawable/background"
                                                    tools:context=".MainActivity">
 
-    <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/xurebslogo"/>
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="250dp"
+        android:layout_height="73dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="76dp"
+        android:text="Welcome!"
+        android:textColor="#FFFFFF"
+        android:textSize="52sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="176dp"
+        android:layout_height="31dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="2dp"
+        android:text="Xurebinha Quiz"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
     <Button
-            android:id="@+id/button"
-            android:layout_width="339dp"
-            android:layout_height="93dp"
-            android:layout_marginBottom="24dp"
-            android:onClick="btnComecarOnClick"
-            android:text="Start"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.461"
-            app:layout_constraintStart_toStartOf="parent"/>
+        android:id="@+id/button"
+        android:layout_width="120dp"
+        android:layout_height="43dp"
+        android:layout_marginEnd="64dp"
+        android:layout_marginBottom="28dp"
+        android:background="@drawable/button"
+        android:fontFamily="monospace"
+        android:onClick="btnComecarOnClick"
+        android:text="Start"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/button6"
+        android:layout_width="120dp"
+        android:layout_height="43dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginBottom="28dp"
+        android:background="@drawable/button"
+        android:fontFamily="monospace"
+        android:text="Results"
+        android:onClick="btnResultsOnClick"
+        android:textColor="#FFFDFD"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

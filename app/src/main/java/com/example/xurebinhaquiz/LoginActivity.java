@@ -20,8 +20,8 @@ import java.util.Map;
 public class LoginActivity extends AppCompatActivity {
 
     private EditText edit_nome, edit_email;
-    private static String URL_REGIST = "http://localhost/android/sigin.php";
-    private int idSigin;
+    private static String URL_REGIST = "http://192.168.101.8/android/sigin.php";
+    private int idSigin,gameType;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +38,9 @@ public class LoginActivity extends AppCompatActivity {
         Regist();
         Bundle resultadoQuiz = new Bundle();
         resultadoQuiz.putInt("idSigIn", idSigin);
+        gameType=0;
+        Bundle type = new Bundle();
+        type.putInt("gameType", gameType);
 
         Intent intent = new Intent(this, QuizActivity.class);
         intent.putExtras(resultadoQuiz);
@@ -82,5 +85,19 @@ public class LoginActivity extends AppCompatActivity {
 
         RequestQueue requestQueue = Volley.newRequestQueue(this);
         requestQueue.add(stringRequest);
+    }
+
+    public void btnEnviar2OnClick(View view) {
+        Regist();
+        Bundle resultadoQuiz = new Bundle();
+        resultadoQuiz.putInt("idSigIn", idSigin);
+        gameType=1;
+        Bundle type = new Bundle();
+        resultadoQuiz.putInt("gameType", gameType);
+
+        Intent intent = new Intent(this, QuizActivity.class);
+        intent.putExtras(resultadoQuiz);
+
+        startActivity(intent);
     }
 }

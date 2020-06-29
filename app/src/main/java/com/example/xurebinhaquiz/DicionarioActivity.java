@@ -16,7 +16,7 @@ public class DicionarioActivity extends AppCompatActivity {
         setContentView(R.layout.activity_dicionario);
         getSupportActionBar().hide();
     }
-    public void BtnVoltarOnClick(View v){
+    public void btnVoltarOnClick(View v){
         this.v = v;
         Intent intent = new Intent(this, ResultadoActivity.class);
         startActivity(intent);

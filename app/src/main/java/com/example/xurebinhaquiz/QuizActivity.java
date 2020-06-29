@@ -22,16 +22,12 @@ import java.util.Map;
 public class QuizActivity extends AppCompatActivity {
 
     private Questions perguntas = new Questions();
-    private int idUser;
+    private int idUser,gtype;
     private TextView pergunta;
     private List perguntaRespondida = new ArrayList();
     private RadioButton rbResposta1, rbResposta2, rbResposta3, rbResposta4;
-<<<<<<< HEAD
     private int pontosR = 0, pontosI = 0, pontosA = 0, pontosS = 0, pontosE = 0, pontosC = 0, ordemPergunta = 50;
-=======
-    private int pontosR = 0, pontosI = 0, pontosA = 0, pontosS = 0, pontosE = 0, pontosC = 0, ordemPergunta = 0;
-    private static String URL_REGIST = "http://localhost/android/updateAwnsers.php";
->>>>>>> 4be146b69a49c310f97a192e77602fc4d896f41c
+    private static String URL_REGIST = "http://localhost/android/updateAnswers.php";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,7 +36,8 @@ public class QuizActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         Bundle resultQuiz = intent.getExtras();
-
+        Bundle type = intent.getExtras();
+        gtype = type.getInt("gameType");
         idUser = resultQuiz.getInt("idSigIn");
 
         pergunta = (TextView) findViewById(R.id.pergunta);
@@ -105,16 +102,23 @@ public class QuizActivity extends AppCompatActivity {
             }
         }
         if (ordemPergunta == 60) {
-
             Bundle resultadoQuiz = new Bundle();
-            resultadoQuiz.putDouble("pontosR", pontosR/30.00*100.00);
-            resultadoQuiz.putDouble("pontosI", pontosI/30.00*100.00);
-            resultadoQuiz.putDouble("pontosA", pontosA/30.00*100.00);
-            resultadoQuiz.putDouble("pontosS", pontosS/30.00*100.00);
-            resultadoQuiz.putDouble("pontosE", pontosE/30.00*100.00);
-            resultadoQuiz.putDouble("pontosC", pontosC/30.00*100.00);
-
-            updateAwnsers();
+            if(gtype==0){
+                resultadoQuiz.putDouble("pontosR", pontosR/30.00*100.00);
+                resultadoQuiz.putDouble("pontosI", pontosI/30.00*100.00);
+                resultadoQuiz.putDouble("pontosA", pontosA/30.00*100.00);
+                resultadoQuiz.putDouble("pontosS", pontosS/30.00*100.00);
+                resultadoQuiz.putDouble("pontosE", pontosE/30.00*100.00);
+                resultadoQuiz.putDouble("pontosC", pontosC/30.00*100.00);
+            }else{
+                resultadoQuiz.putDouble("pontosR", pontosR/15.00*100.00);
+                resultadoQuiz.putDouble("pontosI", pontosI/15.00*100.00);
+                resultadoQuiz.putDouble("pontosA", pontosA/15.00*100.00);
+                resultadoQuiz.putDouble("pontosS", pontosS/15.00*100.00);
+                resultadoQuiz.putDouble("pontosE", pontosE/15.00*100.00);
+                resultadoQuiz.putDouble("pontosC", pontosC/15.00*100.00);
+            }
+            updateAnswers();
 
             Intent intent = new Intent(this, ResultadoActivity.class);
             intent.putExtras(resultadoQuiz);
@@ -123,11 +127,15 @@ public class QuizActivity extends AppCompatActivity {
             Intent intent = new Intent(this, RespostaActivity.class);
             startActivity(intent);
         }
-        ordemPergunta++;
 
+        if(gtype==0) {
+            ordemPergunta++;
+        }else {
+            ordemPergunta=ordemPergunta+2;
+        }
     }
 
-    private void updateAwnsers() {
+    private void updateAnswers() {
         StringRequest stringRequest = new StringRequest(Request.Method.POST, URL_REGIST, new Response.Listener<String>() {
 
             @Override

@@ -17,4 +17,9 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, LoginActivity.class);
         startActivity(intent);
     }
+
+    public void btnResultsOnClick(View v){
+        Intent intent = new Intent(this, ResultsActivity.class);
+        startActivity(intent);
+    }
 }
